@@ -1,51 +1,6 @@
-# RecordRTC.js | [Live Demo](https://www.webrtc-experiment.com/RecordRTC/)
+# Bifurcación del proyecto RecordRTC.js | [Live Demo](https://www.webrtc-experiment.com/RecordRTC/)
 
-**WebRTC JavaScript Library for Audio+Video+Screen+Canvas (2D+3D animation) Recording**
-
-[Chrome Extension](https://github.com/muaz-khan/Chrome-Extensions/tree/master/screen-recording) or [Dozens of Simple-Demos](https://www.webrtc-experiment.com/RecordRTC/simple-demos/) and [it is Open-Sourced](https://github.com/muaz-khan/RecordRTC) and has [API documentation](https://recordrtc.org/)
-
-[![npm](https://img.shields.io/npm/v/recordrtc.svg)](https://npmjs.org/package/recordrtc) [![downloads](https://img.shields.io/npm/dm/recordrtc.svg)](https://npmjs.org/package/recordrtc) [![Build Status: Linux](https://travis-ci.org/muaz-khan/RecordRTC.png?branch=master)](https://travis-ci.org/muaz-khan/RecordRTC)
-
-**A demo using promises:**
-
-```javascript
-let stream = await navigator.mediaDevices.getUserMedia({video: true, audio: true});
-let recorder = new RecordRTCPromisesHandler(stream, {
-    type: 'video'
-});
-recorder.startRecording();
-
-const sleep = m => new Promise(r => setTimeout(r, m));
-await sleep(3000);
-
-await recorder.stopRecording();
-let blob = await recorder.getBlob();
-invokeSaveAsDialog(blob);
-```
-
-**A demo using normal coding:**
-
-```javascript
-navigator.mediaDevices.getUserMedia({
-    video: true,
-    audio: true
-}).then(async function(stream) {
-    let recorder = RecordRTC(stream, {
-        type: 'video'
-    });
-    recorder.startRecording();
-
-    const sleep = m => new Promise(r => setTimeout(r, m));
-    await sleep(3000);
-
-    recorder.stopRecording(function() {
-        let blob = recorder.getBlob();
-        invokeSaveAsDialog(blob);
-    });
-});
-```
-
-* [Watch a YouTube video presentation/tutorial](https://www.youtube.com/watch?v=YrLzTgdJ-Kg)
+** Ampliado/Modificado para adaptarse a los requerimientos actuales **
 
 ## Browsers Support
 
@@ -68,22 +23,7 @@ navigator.mediaDevices.getUserMedia({
 | Edge (new)    | VP8, VP9, H264, MKV | OPUS/VORBIS, PCM |
 
 
-## CDN
-
-```html
-<!-- recommended -->
-<script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
-
-<!-- use 5.6.0 or any other version on cdnjs -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.6.0/RecordRTC.js"></script>
-
-<!-- NPM i.e. "npm install recordrtc" -->
-<script src="node_modules/recordrtc/RecordRTC.js"></script>
-
-<!-- bower -->
-<script src="bower_components/recordrtc/RecordRTC.js"></script>
-```
-
+ 
 ## Configuration
 
 ```javascript
@@ -267,10 +207,7 @@ RecordRTC.prototype = {
     // [readonly] useful only for StereoAudioRecorder
     sampleRate: integer
 }
-```
-
-Please check documentation here: [https://recordrtc.org/](https://recordrtc.org/)
-
+``` 
 ## Global APIs
 
 ```javascript
